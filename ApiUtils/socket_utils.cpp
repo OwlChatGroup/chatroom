@@ -5,7 +5,7 @@
  * @Author       : GDDG08
  * @Date         : 2022-08-20 11:25:29
  * @LastEditors  : GDDG08
- * @LastEditTime : 2022-08-23 02:37:19
+ * @LastEditTime : 2022-08-24 10:54:21
  */
 #include "socket_utils.h"
 
@@ -14,8 +14,8 @@
 //     SocketUtils();
 // }
 
-SocketUtils::SocketUtils(QObject* parent)
-    : QObject(parent) {
+SocketUtils::SocketUtils(QObject* parent, QString _host, int _host_port)
+    : QObject(parent), host(_host), host_port(_host_port) {
     this->client = new QTcpSocket();
 
     connect(client, SIGNAL(connected()), this, SLOT(connectCallback()));
@@ -30,7 +30,8 @@ SocketUtils::~SocketUtils() {
 }
 
 void SocketUtils::connectServer() {
-    this->connectServer("localhost", 10002);
+    this->connectServer(this->host, this->host_port);
+    // this->connectServer("localhost", 10000);
     // this->connectServer("10.172.175.211", 10000);
     // this->connectServer("192.168.192.92", 10000);
 }

@@ -5,7 +5,7 @@
  * @Author       : GDDG08
  * @Date         : 2022-08-20 10:52:10
  * @LastEditors  : GDDG08
- * @LastEditTime : 2022-08-23 02:09:18
+ * @LastEditTime : 2022-08-24 16:01:19
  */
 #ifndef PACKAGE_H
 #define PACKAGE_H
@@ -29,7 +29,11 @@ enum PACKET_TYPE {
     FRIEND_ACCEPT,
     FRIEND_REQUEST,
     FRIEND_RESULT,
-    USER_INFO
+    USER_INFO,
+    USER_DETAIL,
+    GROUP_CREATE,
+    GROUP_ADD
+
 };
 class Packet {
    public:
@@ -128,12 +132,27 @@ class Pak_BasicArrayRTN : public PacketRTN {
 
 /*======== FRIEND ========*/
 
-class Pak_FriendBasicInfo {
+class Pak_FriendBasicInfoRTN : public PacketRTN {
+   public:
+    uint32_t avatarID;
+    char nickName[128];
+    uint32_t userID;
+    uint8_t userStatus;
+};
+
+class Pak_FriendDetailInfoRTN : public PacketRTN {
    public:
     uint32_t userID;
     char nickName[128];
+    uint8_t gender;
+    uint8_t age;
+    uint8_t city;
+    uint8_t job;
     uint32_t avatarID;
+    char signature[256];
+    uint8_t userStatus;
 };
+
 class Pak_FriendBasicRTN : public PacketRTN {
    public:
     uint32_t userID;
@@ -163,4 +182,24 @@ class Pak_FriendAccept : public Pak_FriendBasic {
     uint8_t isAccepted;
     Pak_FriendAccept(uint32_t _userID_my, uint32_t _userID_client, uint8_t _isAccepted);
 };
+
+// GROUP
+class Pak_GroupCreate : public Pak_Basic {
+   public:
+    char groupName[256];
+    Pak_GroupCreate(uint32_t _userID, QString _groupName);
+};
+
+class Pak_GroupCreateRTN : public PacketRTN {
+   public:
+    uint32_t groupID;
+};
+
+class Pak_GroupAdd : public Pak_Basic {
+   public:
+    uint32_t clientID;
+    uint32_t groupID;
+    Pak_GroupAdd(uint32_t _userID,uint32_t _clientID, uint32_t _groupID);
+};
+
 #endif  // PACKAGE_H

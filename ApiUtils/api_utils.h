@@ -5,25 +5,32 @@
  * @Author       : GDDG08
  * @Date         : 2022-08-20 11:48:48
  * @LastEditors  : GDDG08
- * @LastEditTime : 2022-08-23 02:59:24
+ * @LastEditTime : 2022-08-24 15:58:41
  */
 #ifndef API_UTILS_H
 #define API_UTILS_H
 
 #include <QObject>
 #include <QCryptographicHash>
+#include <QList>
 #include <ApiUtils/packet.h>
 #include <ApiUtils/socket_utils.h>
-#include <ApiUtils/data/data_storage.h>
+#include <ApiUtils/http_utils.h>
 #include <ApiUtils/tools/logger.h>
-#include <QList>
+#include <ApiUtils/data/data_utils.h>
+
+#define REMOTE_HOST "127.0.0.1"
+#define REMOTE_PORT_SOCKET 10000
+#define REMOTE_PORT_HTTP 10002
+
+#define HTTP_ENABLE
 
 enum TASK_STATUS {
-    SUCCESS ,
+    SUCCESS = 0,
     NO_USER_ERROR,
     WRONG_PWD_ERROR,
     USER_EXISTED_ERROR,
-
+    TASK_ERROR
 };
 
 const QString TASK_STATUS_MSG[]{
@@ -31,8 +38,14 @@ const QString TASK_STATUS_MSG[]{
     "NO_USER_ERROR",
     "WRONG_PWD_ERROR",
     "USER_EXISTED_ERROR",
-    };
+    "ERROR"};
 
+enum FRIEND_REQUEST_STATUS {
+    SEND = 1u,
+    ARRIVE,
+    ACCEPT,
+    REJECT
+};
 class ApiUtils : public QObject {
     Q_OBJECT
 
@@ -45,14 +58,24 @@ class ApiUtils : public QObject {
 
     int getFriendList();
     int getUserInfo(uint32_t _userID);
+    int getUserDetail(uint32_t _userID);
     int onFriendAdd(uint32_t _userID, QString _verify_msg);
     int onFriendDelete(uint32_t _userID);
     int onFriendAccept(uint32_t _userID, bool _isAccepted);
+    int onGroupCreate(QString _groupName);
+    int onGroupAdd(uint32_t _groupID, int64_t _userID = -1);
+#ifdef HTTP_ENABLE
+    int onSendFile(QString filePath);
+    int onDownFile(int _msgID, QString _filePath);
+#endif
 
    private:
     uint32_t getGUID(QString tag);
     SocketUtils* socketUtils;
-    DataStorage* dataStorage;
+#ifdef HTTP_ENABLE
+    HttpClientHelper* httpUtils;
+#endif
+    DataUtils* dataUtils;
     uint32_t login_ID = 0, login_ID_trial = 0;
     char login_token[17] = {0};
     int onRecvMessage(uint32_t _msgID);
@@ -68,8 +91,9 @@ class ApiUtils : public QObject {
     void onRegisterCallback(uint8_t);
     void sendMessageCallback(uint8_t, uint32_t msgID);
     void recvMessageCallback(uint32_t fromUserID, uint32_t sessionID, uint64_t time, uint32_t msgID, uint8_t msg_type, QString content);
-    void getFriendListCallback(QList<Pak_FriendBasicInfo>);  // Caution list might be zero
-    void getUserInfoCallback(Pak_FriendBasicInfo);           // Caution list might be zero
+    void getFriendListCallback(QList<D_UserBasicInfo>);  // Caution list might be zero
+    void getUserInfoCallback(D_UserBasicInfo);
+    void getUserDetailCallback(D_UserDetailInfo);
     void onFriendAddCallback(uint8_t, uint32_t userID_client);
     void onFriendDeleteCallback(uint8_t, uint32_t userID_client);
     //@回应好友请求回调
@@ -78,6 +102,8 @@ class ApiUtils : public QObject {
     void onFriendRequestCallback(uint32_t fromUserID, QString verify_msg);
     //@收到对方回执回调
     void onFriendResultCallback(uint32_t userID_client, bool isAccepted);
+    void onGroupCreateCallback(uint8_t, uint32_t);
+    void onGroupAddCallback(uint8_t);
 };
 
 #endif  // API_UTILS_H

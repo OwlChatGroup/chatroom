@@ -31,6 +31,8 @@ SOURCES += main.cpp\
     ApiUtils/api_utils.cpp \
     ApiUtils/tools/byte_convert.cpp \
     ApiUtils/tools/logger.cpp \
+    ApiUtils/data/data_storage.cpp \
+    ApiUtils/data/data_utils.cpp \
     imageviewlabel.cpp\
         owlchatmain.cpp \
         ItemInfo.cpp \
@@ -44,7 +46,7 @@ SOURCES += main.cpp\
     ifaddnewfriendbutton.cpp \
     groupshow.cpp \
     headshots.cpp\
-    ApiUtils/data/data_storage.cpp \
+#    ApiUtils/data/data_storage.cpp \
 
 HEADERS  += login.h \
     register.h \
@@ -52,7 +54,16 @@ HEADERS  += login.h \
     ApiUtils/socket_utils.h \
     ApiUtils/api_utils.h \
     ApiUtils/tools/byte_convert.h \
+    ApiUtils/tools/logger.h \    ApiUtils/packet.h \
+    ApiUtils/socket_utils.h \
+    ApiUtils/api_utils.h \
+    ApiUtils/tools/byte_convert.h \
     ApiUtils/tools/logger.h \
+    ApiUtils/tools/httplib.h \
+    ApiUtils/data/data_storage.h \
+    ApiUtils/data/data_utils.h \
+    ApiUtils/data/data_struct.h \
+    ApiUtils/http_utils.h \
     imageviewlabel.h\
 owlchatmain.h \
         ItemInfo.h \
@@ -160,3 +171,9 @@ DISTFILES += \
 
 #RC_FILE = logo.rc
 
+#FORMS    += mainwindow.ui
+
+OBJECTS_DIR  = tmp
+MOC_DIR      = tmp
+
+LIBS += -lWs2_32

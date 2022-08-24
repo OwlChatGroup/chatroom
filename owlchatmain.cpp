@@ -31,8 +31,12 @@
 #include <QImageReader>
 #include <QFile>
 #include <QFileInfo>
+#include <ApiUtils/api_utils.h>
+
 #define min(a,b) ((a)<(b)? (a) :(b))
 #define max(a,b) ((a)>(b)? (a) :(b))
+ApiUtils* OwlChatMain::api;
+uint8_t OwlChatMain::myID;
 
 //预存用户列表数据
 const QStringList headpics = {
@@ -58,6 +62,14 @@ OwlChatMain::OwlChatMain(QWidget *parent) :
     this->setWindowTitle("OwlChat");
     myInfo = new UserItemData();
     friendInfo = new UserItemData();
+
+//    api = new ApiUtils();
+    api->getUserInfo(11);
+    api->getUserDetail(11u);
+    qDebug() << "myID" << myID;
+    qDebug() << "myID" << myID;
+
+
     //添加头像图片
     QIcon icon;
     icon.addFile(":/images/3.png");
@@ -1064,4 +1076,82 @@ void OwlChatMain::handle_delete_member()
 void OwlChatMain::handle_delete_all()
 {
     qDebug() << "delete_all";
+}
+
+void OwlChatMain::setMyID(uint8_t myID_2)
+{
+myID = myID_2;
+}
+//网络
+void OwlChatMain::onLoginCallback(uint8_t s)
+{
+
+}
+
+void OwlChatMain::onRegisterCallback(uint8_t s)
+{
+
+}
+
+void OwlChatMain::sendMessageCallback(uint8_t s, uint32_t msgID)
+{
+
+}
+
+void OwlChatMain::recvMessageCallback(uint32_t fromUserID, uint32_t sessionID, uint64_t time, uint32_t msgID, uint8_t msg_type, QString content)
+{
+
+}
+
+void OwlChatMain::getFriendListCallback(QList<D_UserBasicInfo> infolist)  // Caution list might be zero
+{
+
+}
+
+void OwlChatMain::getUserInfoCallback(D_UserBasicInfo info)
+{
+
+}
+
+void OwlChatMain::getUserDetailCallback(D_UserDetailInfo info)
+{
+
+}
+
+void OwlChatMain::onFriendAddCallback(uint8_t s, uint32_t userID_client)
+{
+
+}
+
+void OwlChatMain::onFriendDeleteCallback(uint8_t s, uint32_t userID_client)
+{
+
+}
+
+//@回应好友请求回调
+void OwlChatMain::onFriendAcceptCallback(uint8_t s, uint32_t userID_client)
+{
+
+}
+
+//@收到好友请求回调
+void OwlChatMain::onFriendRequestCallback(uint32_t fromUserID, QString verify_msg)
+{
+
+}
+
+//@收到对方回执回调
+void OwlChatMain::onFriendResultCallback(uint32_t userID_client, bool isAccepted)
+{
+
+}
+
+void OwlChatMain::onGroupCreateCallback(uint8_t s1, uint32_t s2)
+{
+
+}
+
+void OwlChatMain::onGroupAddCallback(uint8_t s)
+{
+
 }

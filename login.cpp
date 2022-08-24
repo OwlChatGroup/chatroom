@@ -35,7 +35,7 @@ Login:: Login(QWidget *parent):
     movie->start();
     ui->label_3->setMovie(movie);
 
-    //设置头像为yuan
+    //设置头像为圆
     ui->label_6->setMask(QRegion(ui->label_6->rect(),QRegion::RegionType::Ellipse));
     QGraphicsDropShadowEffect *shadow_effect = new QGraphicsDropShadowEffect(this);
     shadow_effect->setOffset(0, 0);
@@ -134,7 +134,11 @@ void Login::on_btnLogin_clicked()
 //    //#1|admin|123&
 //    QString packData ="#1|"+ uName+ "|" +pWord + "&";
 //    client->write(packData.toLocal8Bit());
-    qDebug()<<_uName<<"  "<<pWord;
+    qDebug()<<"_uName" << _uName <<"  "<<pWord;
+    qDebug() << "myID_lo" << mw->myID;
+    mw->setMyID(_uName);
+    mw->api = api;
+    qDebug() << "myID_lo" << mw->myID;
 
     api->onLogin(_uName, pWord);
 }

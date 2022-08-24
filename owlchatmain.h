@@ -13,6 +13,7 @@
 #include "ItemInfo.h"
 #include "ifaddnewfriendbutton.h"
 #include "groupshow.h"
+#include <ApiUtils/api_utils.h>
 
 #define EDGE_MARGIN 8
 
@@ -32,6 +33,9 @@ public:
     QStringList     m_sAcPicList;   //拖拽入得图片列表
     QStringList     m_sAcFileList;  //拖拽入得文件列表
     bool eventFilter(QObject *obj, QEvent *event);
+    static ApiUtils* api;
+    static uint8_t myID ;
+    void setMyID(uint8_t myID);
 protected:
     virtual void mouseMoveEvent(QMouseEvent * event);
     virtual void mousePressEvent(QMouseEvent * event);
@@ -93,6 +97,25 @@ private slots:
     void handle_add_member();
     void handle_delete_member();
     void handle_delete_all();
+
+    //网络
+    void onLoginCallback(uint8_t s);
+    void onRegisterCallback(uint8_t s);
+    void sendMessageCallback(uint8_t s, uint32_t msgID);
+    void recvMessageCallback(uint32_t fromUserID, uint32_t sessionID, uint64_t time, uint32_t msgID, uint8_t msg_type, QString content);
+    void getFriendListCallback(QList<D_UserBasicInfo> infolist);  // Caution list might be zero
+    void getUserInfoCallback(D_UserBasicInfo info);
+    void getUserDetailCallback(D_UserDetailInfo info);
+    void onFriendAddCallback(uint8_t s, uint32_t userID_client);
+    void onFriendDeleteCallback(uint8_t s, uint32_t userID_client);
+    //@回应好友请求回调
+    void onFriendAcceptCallback(uint8_t s, uint32_t userID_client);
+    //@收到好友请求回调
+    void onFriendRequestCallback(uint32_t fromUserID, QString verify_msg);
+    //@收到对方回执回调
+    void onFriendResultCallback(uint32_t userID_client, bool isAccepted);
+    void onGroupCreateCallback(uint8_t s1, uint32_t s2);
+    void onGroupAddCallback(uint8_t s);
 
 private:
     QPoint dragPosition;   //鼠标拖动的位置

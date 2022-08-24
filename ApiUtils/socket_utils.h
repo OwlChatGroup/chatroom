@@ -5,7 +5,7 @@
  * @Author       : GDDG08
  * @Date         : 2022-08-20 11:25:29
  * @LastEditors  : GDDG08
- * @LastEditTime : 2022-08-22 20:17:24
+ * @LastEditTime : 2022-08-24 10:57:04
  */
 #ifndef SOCKET_UTILS_H
 #define SOCKET_UTILS_H
@@ -26,7 +26,7 @@ class SocketUtils : public QObject {
 
    public:
     // SocketUtils(ApiUtils* api);
-    explicit SocketUtils(QObject* parent = 0);
+    explicit SocketUtils(QObject* parent, QString _host, int _host_port);
     ~SocketUtils();
     int sendData(QByteArray);
 
@@ -35,6 +35,8 @@ class SocketUtils : public QObject {
     // DataHandler dataHandler;
     char pak_header[3] = {SOCKET_PACKET_HEADR_0, SOCKET_PACKET_HEADR_1, '\0'};
     bool isConnected;
+    const QString host;
+    const int host_port;
     void connectServer();
     void connectServer(QString hostname, quint16 port);
 
