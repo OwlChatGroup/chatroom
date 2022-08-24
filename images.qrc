@@ -85,5 +85,7 @@
         <file>images/min.png</file>
         <file>images/1(1).png</file>
         <file>images/emoji/add.png</file>
+        <file>images/friend.png</file>
+        <file>images/group.png</file>
     </qresource>
 </RCC>

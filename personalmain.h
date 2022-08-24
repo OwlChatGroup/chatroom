@@ -34,15 +34,13 @@ public:
 
     void on_btnInit();
 private slots:
-    void on_btnPassword_clicked(bool flag);
+    void on_btnPassword_clicked();
 
     void on_btnConfirm_clicked();
 
     void on_statusEdit_currentIndexChanged(int index);
 
     void on_btnSave_clicked();
-
-    void on_btnPassword_clicked();
 
 
 private:

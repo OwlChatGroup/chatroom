@@ -28,7 +28,7 @@
   <property name="styleSheet">
    <string notr="true">QDialog
 {
-background-color: rgb(240,240,240);
+background-color: rgb(211,211,211);
 border-top-left-radius : 15px;
 }
 QLabel
@@ -168,7 +168,7 @@ QPushButton:hover
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>241</x>
@@ -204,7 +204,7 @@ QPushButton:hover
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>240</x>

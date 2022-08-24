@@ -180,17 +180,17 @@ QScrollBar::handle:horizontal:pressed{
 }   
 QLabel#label_7
 {
-	color: rgb(255, 34, 34);
+	color: rgb(0,0,0);
 	font:normal 10px &quot;Microsoft YaHei&quot;;
 }
 QLabel#label_8
 {
-	color: rgb(255, 34, 34);
+	color: rgb(0,0,0);
 	font:normal 10px &quot;Microsoft YaHei&quot;;
 }
 QLabel#label_16
 {
-	color: rgb(255, 34, 34);
+	color: rgb(0,0,0);
 	font:normal 10px &quot;Microsoft YaHei&quot;;
 }</string>
   </property>
@@ -506,6 +506,9 @@ QLabel#label_16
       <height>21</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0,0,0);</string>
+    </property>
     <property name="text">
      <string>个人信息</string>
     </property>
@@ -550,6 +553,9 @@ QLabel#label_16
       <width>411</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0,0,0);</string>
     </property>
     <property name="text">
      <string>账号信息</string>
@@ -656,6 +662,9 @@ QLabel#label_16
       <height>27</height>
      </size>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0,0,0);</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_5">
     <property name="geometry">
@@ -677,6 +686,9 @@ QLabel#label_16
       <width>160</width>
       <height>27</height>
      </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0,0,0);</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -713,6 +725,9 @@ QLabel#label_16
       <height>27</height>
      </size>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0,0,0);</string>
+    </property>
     <property name="inputMask">
      <string/>
     </property>
@@ -744,6 +759,9 @@ QLabel#label_16
       <height>27</height>
      </size>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0,0,0);</string>
+    </property>
     <property name="echoMode">
      <enum>QLineEdit::Password</enum>
     </property>
@@ -768,6 +786,9 @@ QLabel#label_16
       <width>160</width>
       <height>27</height>
      </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0,0,0);</string>
     </property>
     <property name="echoMode">
      <enum>QLineEdit::Password</enum>
@@ -961,7 +982,7 @@ QLabel#label_16
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">color: rgb(0,0,0);</string>
    </property>
    <property name="text">
     <string>确认注册</string>
