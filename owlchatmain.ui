@@ -326,8 +326,18 @@ background-color: rgb(245,245,245);</string>
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">image: url(:/images/folder.png);
-border-radius :5px;</string>
+              <string notr="true">QPushButton
+{
+	image: url(:/images/folder.png);
+	border-radius :5px;
+	background-color: rgb(250,250,250);
+	border: none;
+}
+QPushButton:hover
+{
+	background-color: rgb(169, 189, 35);
+	border: none;
+}</string>
              </property>
              <property name="text">
               <string/>
@@ -349,8 +359,19 @@ border-radius :5px;</string>
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">image: url(:/images/expression.png);
-border-radius :5px;</string>
+              <string notr="true">QPushButton
+{
+	
+	image: url(:/images/expression.png);
+	border-radius :5px;
+	background-color: rgb(250,250,250);
+	border: none;
+}
+QPushButton:hover
+{
+	background-color: rgb(169, 189, 35);
+	border: none;
+}</string>
              </property>
              <property name="text">
               <string/>
@@ -387,8 +408,19 @@ border-radius :5px;</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">image: url(:/images/more.png);
-border-radius :5px;</string>
+            <string notr="true">QPushButton
+{
+	
+	image: url(:/images/more.png);
+	border-radius :5px;
+	background-color: rgb(250,250,250);
+	border: none;
+}
+QPushButton:hover
+{
+	background-color: rgb(169, 189, 35);
+	border: none;
+}</string>
            </property>
            <property name="text">
             <string/>
@@ -466,10 +498,18 @@ font: 12pt &quot;微软雅黑&quot;;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">border-radius :5px;
+          <string notr="true">QPushButton
+{
 font: 9pt &quot;微软雅黑&quot;;
-background-color: rgb(169,189,35);
-color: rgb(0, 0, 0);</string>
+	border-radius :5px;
+	background-color: rgb(250,250,250);
+	border: none;
+}
+QPushButton:hover
+{
+	background-color: rgb(169, 189, 35);
+	border: none;
+}</string>
          </property>
          <property name="text">
           <string>发送</string>

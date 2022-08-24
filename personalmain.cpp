@@ -220,4 +220,18 @@ void PersonalMain::on_btnInit()
     }else{
         ui->btnPassword->setText("修改密码");
     }
+
+    ifEditInfo= false;
+    if(ifEditInfo){
+        ui->btnConfirm->setText("确认修改");
+    }else{
+        ui->btnConfirm->setText("修改信息");
+    }
+    ui->nameEdit->setEnabled(ifEditInfo);
+    ui->signatureEdit->setEnabled(ifEditInfo);
+    ui->accountEdit->setEnabled(ifEditInfo);
+    ui->ageEdit->setEnabled(ifEditInfo);
+    ui->cityEdit->setEnabled(ifEditInfo);
+    ui->genderEdit->setEnabled(ifEditInfo);
+    ui->jobEdit->setEnabled(ifEditInfo);
 }

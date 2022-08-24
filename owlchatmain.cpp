@@ -689,7 +689,7 @@ void OwlChatMain::changeColor(bool isChatList)
                     "QPushButton"
                     "{"
                     "background-color:rgb(169,189,35);"
-                    "image: url(:/images/chatList.png);"
+                    "image: url(:/images/friend.png);"
                     "}"
                     "QPushButton:hover"
                     "{"
@@ -699,7 +699,7 @@ void OwlChatMain::changeColor(bool isChatList)
                     "QPushButton"
                     "{"
                     "background-color:rgb(250,250,250);"
-                    "image: url(:/images/friendList.png);"
+                    "image: url(:/images/group.png);"
                     "}"
                     "QPushButton:hover"
                     "{"
@@ -710,7 +710,7 @@ void OwlChatMain::changeColor(bool isChatList)
                     "QPushButton"
                     "{"
                     "background-color:rgb(250,250,250);"
-                    "image: url(:/images/chatList.png);"
+                    "image: url(:/images/friend.png);"
                     "}"
                     "QPushButton:hover"
                     "{"
@@ -720,7 +720,7 @@ void OwlChatMain::changeColor(bool isChatList)
                     "QPushButton"
                     "{"
                     "background-color:rgb(169,189,35);"
-                    "image: url(:/images/friendList.png);"
+                    "image: url(:/images/group.png);"
                     "}"
                     "QPushButton:hover"
                     "{"
@@ -774,12 +774,12 @@ void OwlChatMain::on_btnMore_clicked()
 
 void OwlChatMain::on_btnHeadIcon_clicked()
 {
+    pm->on_btnInit();
     if(pm->isHidden()){
         pm->setGeometry(50,40,350,595);
         pm->show();
     }else{
         pm->hide();
-        pm->on_btnInit();
     }
     add->hide();
 }

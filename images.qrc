@@ -87,5 +87,11 @@
         <file>images/emoji/add.png</file>
         <file>images/friend.png</file>
         <file>images/group.png</file>
+        <file>images/avatar/boy_1.png</file>
+        <file>images/avatar/boy_2.png</file>
+        <file>images/avatar/boy_3.png</file>
+        <file>images/avatar/girl_1.png</file>
+        <file>images/avatar/girl_2.png</file>
+        <file>images/avatar/girl_3.png</file>
     </qresource>
 </RCC>
