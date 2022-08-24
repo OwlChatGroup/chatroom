@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>appIcon.ico</file>
+        <file>circle.jpg</file>
+        <file>close.png</file>
+        <file>drop-down.png</file>
+        <file>drop-down-hover.png</file>
+        <file>img.qrc</file>
+        <file>min.png</file>
+        <file>owl.png</file>
+        <file>page1.png</file>
+        <file>page2.png</file>
+        <file>page3.png</file>
+        <file>page4.png</file>
+        <file>page5.png</file>
+        <file>passwd-focus.png</file>
+        <file>username-focus.png</file>
+    </qresource>
+</RCC>

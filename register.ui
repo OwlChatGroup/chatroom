@@ -1,0 +1,1038 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Register</class>
+ <widget class="QDialog" name="Register">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>885</width>
+    <height>541</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+
+QPushButton
+{
+ border:one;
+font: normal 18px &quot;楷体&quot;;
+color: rgb(76, 76, 76);
+}
+
+
+QLabel
+{
+	font: normal 15px &quot;Microsoft YaHei&quot;;
+}
+QLabel#label_9
+{
+	border:none;
+	border-bottom:1px solid rgb(229,229,229);
+	font: normal 18px &quot;Microsoft YaHei&quot;;
+	color: rgb(193,193,193);
+}
+QLabel#label_10
+{
+	border:none;
+	border-bottom:1px solid rgb(229,229,229);
+	font: normal 18px &quot;Microsoft YaHei&quot;;
+	color: rgb(193,193,193);
+}
+QPushButton#btnMin:hover
+{
+ 
+	background-color: rgba(204, 204, 204,100);
+}
+QPushButton#btnClose:hover
+{
+ 
+	background-color: rgb(255, 84, 57);
+}
+QPushButton#pushButton:hover
+{
+	background-color: rgba(229, 207, 170, 100);
+	border-radius:10px;
+
+}
+
+
+QLineEdit
+{
+	border:none;
+	border-bottom:2px solid rgb(200,200,200);
+
+	font: normal 18px &quot;楷体&quot;;
+	color: rgb(193,193,193);
+
+
+
+}
+QLineEdit:hover
+{
+	border-bottom:1px solid rgb(193,193,193);
+
+}
+QLineEdit:focus
+{
+	border-bottom:1px solid rgb(18,183,245);
+
+}
+QComboBox
+{
+	border:none;
+	border-bottom:1px solid rgb(200,200,200);
+	font:normal 12px &quot;Microsoft YaHei&quot;;
+}
+QComboBox:hover
+{
+	
+	border-bottom:1px solid rgb(193,193,193);
+	font:normal 12px &quot;Microsoft YaHei&quot;;
+}
+
+QComboBox::drop-down
+{
+	min-width:25px;
+	
+	
+	border-image: url(:/imge_login/drop-down.png);
+
+}
+QComboBox::drop-down:hover
+{
+	min-width:25px;
+	
+	
+	
+	border-image: url(:/imge_login/drop-down-hover.png);
+
+}
+QScrollBar:horizontal{
+
+       width:8px; 
+
+       padding-top:0px;
+
+       padding-bottom:0px;
+
+       padding-right:0px;
+
+       padding-left:0px;
+
+       background: #000000;
+
+       border-radius:100px;
+
+}
+
+QScrollBar::handle:horizontal{
+
+       background:#E5E5E5;
+
+       width:8px;
+
+       border: 0px solid #E5E5E5;
+
+       min-height:20px;
+
+       border-radius:100px;
+
+}
+
+QScrollBar::handle:horizontal:normal{
+
+       background:#F5F5F5;
+
+       width:8px;
+
+       border: 0px solid #E5E5E5;
+
+       border-radius:100px;
+
+}
+
+QScrollBar::handle:horizontal:hover{
+
+       background:#E6E6E6;
+
+       width:8px;
+
+       border: 0px solid #E5E5E5;
+
+       border-radius:100px;
+
+}
+
+QScrollBar::handle:horizontal:pressed{
+
+       background:#CCCCCC;
+
+       width:8px;
+
+       border: 0px solid #E5E5E5;
+
+       border-radius:100px;
+
+}   
+QLabel#label_7
+{
+	color: rgb(255, 34, 34);
+	font:normal 10px &quot;Microsoft YaHei&quot;;
+}
+QLabel#label_8
+{
+	color: rgb(255, 34, 34);
+	font:normal 10px &quot;Microsoft YaHei&quot;;
+}
+QLabel#label_16
+{
+	color: rgb(255, 34, 34);
+	font:normal 10px &quot;Microsoft YaHei&quot;;
+}</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>50</y>
+     <width>411</width>
+     <height>461</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QComboBox" name="comboBox_3">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>390</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>101</width>
+      <height>31</height>
+     </size>
+    </property>
+    <item>
+     <property name="text">
+      <string>-请选择-</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>教师</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>学生</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>公务员</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>律师/法务</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>计算机/通信</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>广告/传媒</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>医疗/护理</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>其他</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="comboBox_2">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>352</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>101</width>
+      <height>31</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>101</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <item>
+     <property name="text">
+      <string>-请选择-</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>北京</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>天津</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>河北</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>辽宁</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>吉林</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>黑龙江</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>山东</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>江苏</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>上海</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>浙江</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>安徽</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>福建</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>江西</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>广东</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>广西</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>海南</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>河南</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>湖南</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>湖北</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>山西</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>内蒙古</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>宁夏</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>青海</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>陕西</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>甘肃</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>新疆</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>四川</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>贵州</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>云南</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>重庆</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>西藏</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>香港</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>澳门</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>台湾</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>140</y>
+      <width>64</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>密    码</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>79</x>
+      <y>322</y>
+      <width>48</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>性   别</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>210</y>
+      <width>411</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>个人信息</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>0</y>
+      <width>61</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/new/prefix1/owl.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>180</y>
+      <width>64</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>确认密码</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>60</y>
+      <width>411</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>账号信息</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>79</x>
+      <y>402</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>职   位</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>69</x>
+      <y>98</y>
+      <width>64</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>账    号</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>79</x>
+      <y>362</y>
+      <width>48</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>城   市</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>314</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>101</width>
+      <height>31</height>
+     </size>
+    </property>
+    <property name="currentText">
+     <string>-请选择-</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>-请选择-</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>男</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>女</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>250</y>
+      <width>48</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>昵   称</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>276</y>
+      <width>160</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>160</width>
+      <height>27</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_5">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>243</y>
+      <width>160</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>160</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>160</width>
+      <height>27</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>79</x>
+      <y>282</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>年   龄</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>94</y>
+      <width>160</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>160</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>160</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="inputMask">
+     <string/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_3">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>132</y>
+      <width>160</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>160</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>160</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_4">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>170</y>
+      <width>160</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>160</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>160</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>200</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 34, 34);</string>
+    </property>
+    <property name="text">
+     <string>！两次密码不一样</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>100</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 34, 34);</string>
+    </property>
+    <property name="text">
+     <string>！账号为空</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_16">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>250</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 34, 34);</string>
+    </property>
+    <property name="text">
+     <string>！昵称为空</string>
+    </property>
+   </widget>
+   <zorder>comboBox_3</zorder>
+   <zorder>comboBox_2</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_12</zorder>
+   <zorder>label_10</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_9</zorder>
+   <zorder>label_13</zorder>
+   <zorder>label</zorder>
+   <zorder>label_5</zorder>
+   <zorder>comboBox</zorder>
+   <zorder>label_11</zorder>
+   <zorder>lineEdit</zorder>
+   <zorder>lineEdit_5</zorder>
+   <zorder>label_4</zorder>
+   <zorder>lineEdit_2</zorder>
+   <zorder>lineEdit_3</zorder>
+   <zorder>lineEdit_4</zorder>
+   <zorder>label_6</zorder>
+   <zorder>label_7</zorder>
+   <zorder>label_8</zorder>
+   <zorder>label_16</zorder>
+  </widget>
+  <widget class="QLabel" name="label_14">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>-10</y>
+     <width>581</width>
+     <height>661</height>
+    </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1666666</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(229, 207, 170);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnClose">
+   <property name="geometry">
+    <rect>
+     <x>850</x>
+     <y>0</y>
+     <width>31</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>31</width>
+     <height>31</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>31</width>
+     <height>31</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/imge_login/close.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnMin">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>0</y>
+     <width>32</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/imge_login/min.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_15">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>60</y>
+     <width>401</width>
+     <height>461</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(161, 144, 119);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="ImageViewLabel" name="imagelabel">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>-40</y>
+     <width>531</width>
+     <height>561</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>410</y>
+     <width>91</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>确认注册</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_18">
+   <property name="geometry">
+    <rect>
+     <x>594</x>
+     <y>35</y>
+     <width>121</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/imge_login/cwhite.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addhs">
+   <property name="geometry">
+    <rect>
+     <x>624</x>
+     <y>70</y>
+     <width>51</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_17">
+   <property name="geometry">
+    <rect>
+     <x>619</x>
+     <y>65</y>
+     <width>61</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/images/emoji/add.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_14</zorder>
+  <zorder>btnClose</zorder>
+  <zorder>btnMin</zorder>
+  <zorder>label_15</zorder>
+  <zorder>frame</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>imagelabel</zorder>
+  <zorder>label_18</zorder>
+  <zorder>label_17</zorder>
+  <zorder>addhs</zorder>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ImageViewLabel</class>
+   <extends>QLabel</extends>
+   <header>imageviewlabel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

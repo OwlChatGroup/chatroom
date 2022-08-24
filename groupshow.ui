@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GroupShow</class>
+ <widget class="QDialog" name="GroupShow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>350</width>
+    <height>320</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>350</width>
+    <height>320</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>350</width>
+    <height>320</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog
+{
+background-color: rgb(240,240,240);
+border-top-left-radius : 15px;
+}
+QLabel
+{
+	font: 9pt &quot;微软雅黑&quot;;
+}
+</string>
+  </property>
+  <widget class="QListView" name="listView">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>201</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="groupName">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>10</y>
+     <width>271</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>（群聊名字）</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>270</y>
+     <width>316</width>
+     <height>37</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QPushButton" name="btnQuit">
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	font: 9pt &quot;微软雅黑&quot;;
+	border-radius :7px;
+	background-color: rgb(255,255,255);
+}
+QPushButton:hover
+{
+	background-color: rgb(169,189,35);
+}</string>
+      </property>
+      <property name="text">
+       <string>退出群聊</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="btnDelete">
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	font: 9pt &quot;微软雅黑&quot;;
+	border-radius :7px;
+	background-color: rgb(255,255,255);
+}
+QPushButton:hover
+{
+	background-color: rgb(169,189,35);
+}</string>
+      </property>
+      <property name="text">
+       <string>删除会话</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QPushButton" name="btnEdit">
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	font: 9pt &quot;微软雅黑&quot;;
+	border-radius :7px;
+	background-color: rgb(255,255,255);
+}
+QPushButton:hover
+{
+	background-color: rgb(169,189,35);
+}</string>
+      </property>
+      <property name="text">
+       <string>管理群组</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>241</x>
+     <y>41</y>
+     <width>62</width>
+     <height>62</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="nameLabel">
+      <property name="text">
+       <string>（名字）</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="idLabel">
+      <property name="text">
+       <string>（ID）</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="ageLabel">
+      <property name="text">
+       <string>（年龄）</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>110</y>
+     <width>71</width>
+     <height>130</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QPushButton" name="btnDeleteAll">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	font: 9pt &quot;微软雅黑&quot;;
+	border-radius :7px;
+	background-color: rgb(255,255,255);
+}
+QPushButton:hover
+{
+	background-color: rgb(169,189,35);
+}</string>
+      </property>
+      <property name="text">
+       <string>解散群聊</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnAddMember_2">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	font: 9pt &quot;微软雅黑&quot;;
+	border-radius :7px;
+	background-color: rgb(255,255,255);
+}
+QPushButton:hover
+{
+	background-color: rgb(169,189,35);
+}</string>
+      </property>
+      <property name="text">
+       <string>查看成员</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnAddMember">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	font: 9pt &quot;微软雅黑&quot;;
+	border-radius :7px;
+	background-color: rgb(255,255,255);
+}
+QPushButton:hover
+{
+	background-color: rgb(169,189,35);
+}</string>
+      </property>
+      <property name="text">
+       <string>添加成员</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnDeleteMember">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	font: 9pt &quot;微软雅黑&quot;;
+	border-radius :7px;
+	background-color: rgb(255,255,255);
+}
+QPushButton:hover
+{
+	background-color: rgb(169,189,35);
+}</string>
+      </property>
+      <property name="text">
+       <string>删除成员</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnAdd">
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	font: 9pt &quot;微软雅黑&quot;;
+	border-radius :7px;
+	background-color: rgb(255,255,255);
+}
+QPushButton:hover
+{
+	background-color: rgb(169,189,35);
+}</string>
+      </property>
+      <property name="text">
+       <string>添加好友</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

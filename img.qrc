@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>imge_login/appIcon.ico</file>
+        <file>imge_login/circle.jpg</file>
+        <file>imge_login/close.png</file>
+        <file>imge_login/drop-down.png</file>
+        <file>imge_login/drop-down-hover.png</file>
+        <file>imge_login/min.png</file>
+        <file>imge_login/owl.png</file>
+        <file>imge_login/page1.png</file>
+        <file>imge_login/page2.png</file>
+        <file>imge_login/page3.png</file>
+        <file>imge_login/page4.png</file>
+        <file>imge_login/page5.png</file>
+        <file>imge_login/passwd-focus.png</file>
+        <file>imge_login/username-focus.png</file>
+        <file>imge_login/gifLabel.gif</file>
+        <file>imge_login/cc.png</file>
+        <file>imge_login/cyellow.png</file>
+        <file>imge_login/cwhite.png</file>
+    </qresource>
+</RCC>

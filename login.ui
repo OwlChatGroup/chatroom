@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Login</class>
+ <widget class="QDialog" name="Login">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>430</width>
+    <height>335</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Login</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog
+{
+	
+	background-color: rgb(255, 255, 255);
+}
+QPushButton
+{
+ border:one;
+}
+QPushButton#btnMin:hover
+{
+ 
+	background-color: rgba(204, 204, 204,100);
+}
+QPushButton#btnClose:hover
+{
+ 
+	background-color: rgb(255, 84, 57);
+}
+QPushButton#btnLogin
+{
+ 
+	background-color: rgb(11, 194, 255);
+	border-radius:5px;
+	font:normal 18px &quot;雅黑&quot;;
+    color: white;
+}
+QPushButton#btnLogin:hover
+{
+ 
+	background-color: rgba(11, 194, 255,200);
+	border-radius:5px;
+	font:normal 18px &quot;雅黑&quot;;
+    color: white;
+}
+QLineEdit
+{
+	border:none;
+	border-bottom:1px solid rgb(229,229,229);
+	font: normal 18px &quot;楷体&quot;;
+	color: rgb(193,193,193);
+
+}
+QLineEdit:hover
+{
+	border-bottom:1px solid rgb(193,193,193);
+
+}
+QLineEdit:focus
+{
+	border-bottom:1px solid rgb(18,183,245);
+
+}</string>
+  </property>
+  <widget class="QPushButton" name="btnLogin">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>260</y>
+     <width>240</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>35</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>35</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>安全登录</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnRegister">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>300</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>注册账号</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>-10</y>
+     <width>431</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/imge_login/gifLabel.gif);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>:/new/prefix1/gifLabel.gif</pixmap>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnMin">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>0</y>
+     <width>32</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/imge_login/min.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnClose">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>0</y>
+     <width>32</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/imge_login/close.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>-10</y>
+     <width>81</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/imge_login/owl.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>:/new/prefix1/owl.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>170</y>
+     <width>34</width>
+     <height>72</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="styleSheet">
+       <string notr="true">image: url(:/imge_login/username-focus.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>:/new/prefix1/username-focus.png</pixmap>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="styleSheet">
+       <string notr="true">image: url(:/imge_login/passwd-focus.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>:/new/prefix1/passwd-focus.png</pixmap>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>170</y>
+     <width>242</width>
+     <height>74</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="minimumSize">
+       <size>
+        <width>240</width>
+        <height>33</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>240</width>
+        <height>33</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Normal</enum>
+      </property>
+      <property name="placeholderText">
+       <string>Username</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="minimumSize">
+       <size>
+        <width>240</width>
+        <height>33</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>240</width>
+        <height>33</height>
+       </size>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+      <property name="placeholderText">
+       <string>Password</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>70</y>
+     <width>75</width>
+     <height>75</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>75</width>
+     <height>75</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>75</width>
+     <height>75</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/imge_login/circle.jpg);
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>133</x>
+     <y>40</y>
+     <width>161</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/imge_login/cc.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
