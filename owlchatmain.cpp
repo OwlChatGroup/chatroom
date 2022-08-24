@@ -106,6 +106,8 @@ OwlChatMain::OwlChatMain(QWidget *parent) :
     changeColor(isChatList);
     //没有选择会话时候不能按
     ui->btnMore->setEnabled(false);
+    ui->btnExpression->setEnabled(false);
+    ui->btnFolder->setEnabled(false);
     ui->btnSend->setEnabled(false);
     //接受文件拖拽
     ui->tedit_send_msg->setAcceptDrops(false);
@@ -348,6 +350,8 @@ void OwlChatMain::on_listView_clicked(const QModelIndex &index)
     selectIndex = index.row();
 
     ui->btnMore->setEnabled(true);
+    ui->btnExpression->setEnabled(true);
+    ui->btnFolder->setEnabled(true);
     ui->btnSend->setEnabled(true);
 
     if(selectIndex_last != selectIndex){
@@ -652,6 +656,8 @@ void OwlChatMain::on_btnChatList_clicked()
 {
     selectIndex=-1;
     ui->btnMore->setEnabled(false);
+    ui->btnExpression->setEnabled(false);
+    ui->btnFolder->setEnabled(false);
     isChatList=true;
     changeColor(isChatList);
     mo->hide();
@@ -665,6 +671,8 @@ void OwlChatMain::on_btnFriendsList_clicked()
 {
     selectIndex=-1;
     ui->btnMore->setEnabled(false);
+    ui->btnExpression->setEnabled(false);
+    ui->btnFolder->setEnabled(false);
     isChatList=false;
     changeColor(isChatList);
     mo->hide();
@@ -771,6 +779,7 @@ void OwlChatMain::on_btnHeadIcon_clicked()
         pm->show();
     }else{
         pm->hide();
+        pm->on_btnInit();
     }
     add->hide();
 }
@@ -834,6 +843,8 @@ void OwlChatMain::handle_add_to_blacklist()
 
     //处理按钮
     ui->btnMore->setEnabled(false);
+    ui->btnExpression->setEnabled(false);
+    ui->btnFolder->setEnabled(false);
     selectIndex=-1;
 }
 

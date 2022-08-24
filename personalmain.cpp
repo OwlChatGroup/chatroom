@@ -58,7 +58,7 @@ PersonalMain::~PersonalMain()
     delete ui;
 }
 
-void PersonalMain::on_btnPassword_clicked(bool flag)
+void PersonalMain::on_btnPassword_clicked()
 {
     ifEditPassword = !ifEditPassword;
 
@@ -92,7 +92,7 @@ void PersonalMain::on_btnPassword_clicked(bool flag)
 void PersonalMain::on_btnConfirm_clicked()
 {
     if(ifEditPassword){
-        on_btnPassword_clicked(ifEditPassword);
+        on_btnPassword_clicked();
     }
 
     ifEditInfo= !ifEditInfo;
@@ -192,7 +192,32 @@ bool PersonalMain::eventFilter(QObject *obj, QEvent *event)
 }
 
 
-void PersonalMain::on_btnPassword_clicked()
+void PersonalMain::on_btnInit()
 {
+    ifEditPassword = false;
 
+    ui->passwordOldLabel->setVisible(ifEditPassword);
+    ui->passwordOldEdit->setVisible(ifEditPassword);
+    ui->passwordNewLabel->setVisible(ifEditPassword);
+    ui->passwordNewEdit->setVisible(ifEditPassword);
+    ui->passwordConfirmLabel->setVisible(ifEditPassword);
+    ui->passwordConfirmEdit->setVisible(ifEditPassword);
+
+    ui->accountEdit->setVisible(!ifEditPassword);
+    ui->accountLabel->setVisible(!ifEditPassword);
+    ui->cityEdit->setVisible(!ifEditPassword);
+    ui->cityLabel->setVisible(!ifEditPassword);
+    ui->ageEdit->setVisible(!ifEditPassword);
+    ui->ageLabel->setVisible(!ifEditPassword);
+    ui->genderEdit->setVisible(!ifEditPassword);
+    ui->genderLabel->setVisible(!ifEditPassword);
+    ui->jobEdit->setVisible(!ifEditPassword);
+    ui->jobLabel->setVisible(!ifEditPassword);
+
+
+    if(ifEditPassword){
+        ui->btnPassword->setText("返回信息");
+    }else{
+        ui->btnPassword->setText("修改密码");
+    }
 }

@@ -31,6 +31,8 @@ public:
     void load_person_info(UserItemData *person);
     bool eventFilter(QObject *obj, QEvent *event);
     int myStatus;
+
+    void on_btnInit();
 private slots:
     void on_btnPassword_clicked(bool flag);
 
@@ -41,6 +43,7 @@ private slots:
     void on_btnSave_clicked();
 
     void on_btnPassword_clicked();
+
 
 private:
     Ui::PersonalMain *ui;
